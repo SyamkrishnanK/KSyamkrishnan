@@ -13,12 +13,12 @@ This is a simple console application written in c# that enables a user to add de
 The details that a user is prompted to enter is configurable and can be configured using an xml file .The Xml file path ought to be given in app.config against the key "MovieDetailsFilePath" .
 
 The above mentioned xml should be of the format :
-<movie-details>
+"<movie-details>
   <movie-detail type="string" display-text="Enter name of movie" mandatory="1" allow-multiple="0" persisted-text="Movie name">Name</movie-detail>
   <movie-detail type="time">Run Time</movie-detail>
   ..
   ..
-</movie-details>
+</movie-details>"
 
 Each "movie-detail" node corresponds to a single entry the user would be prompted to enter. The attributes that I have defined and its behaviours are as follows:
 display-text :This would be the text shown in console when the user is prompted to enter value for this movie detail.
