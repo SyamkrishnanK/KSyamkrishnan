@@ -58,13 +58,6 @@ namespace Movie
         {
             string rootPath = ConfigurationManager.AppSettings["ExportRootFolderPath"];
 
-                 #region debug
-            StringBuilder sb = new StringBuilder();
-            movies.ForEach(t => sb.AppendLine(t.ToString()));
-            File.WriteAllText(Path.Combine(rootPath, "sample.txt"),sb.ToString());
-
-
-            #endregion
 
             ExportMovieBase.RegisterAllExportHandlers();
             IEnumerable<IExportMovie> handlers = ExportMovieBase.GetAllHandlers().Select(t => t());
@@ -77,15 +70,15 @@ namespace Movie
                 choice = ShowExportMenu(handlers);
             }
             bool bValid = true;
-            
+
             string path;
             do
             {
                 bValid = true;
                 Console.WriteLine("Enter file path");
-                
-                Console.WriteLine(string.Format( "Configured root folder is {0} . if you want to save relative to it start with '/'",rootPath));
-                 path = Console.ReadLine();
+
+                Console.WriteLine(string.Format("Configured root folder is {0} . if you want to save relative to it start with '/'", rootPath));
+                path = Console.ReadLine();
                 if (path.IndexOf('/') == 0)
                     path = Path.Combine(rootPath, path.Substring(1));
 
