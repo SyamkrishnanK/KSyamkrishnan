@@ -33,13 +33,18 @@ The application can be extended to support another type trivially by writing a c
 ISingleDetail interface has 2 methods :
 Parse - takes an xmlnode as input and parses the specification attributes of the node. This method would be called when parsing the specification xml.
 AddMovieDetail - This method decides the behaviour of the movie detail and returns an XElement that has the format :
+
+```xml
 <movie-name>qwe</movie-name>
+```
 where moive-name is the persisted-text or label that is required in the pdf or plain text.
 In case of multiple entries  the expected format is :
+```xml
 <lead-actor multiple="1">
     <value>qwe</value>
     <value>swe</value>
  </lead-actor>
+ ```
  
  This way movie details can be added or removed as required without altering the code and also new types can be supported and its attributes can be a completely distinct set.
  
@@ -54,11 +59,13 @@ In case of multiple entries  the expected format is :
  Exporting data relies on the same desing pattern as above. The application exposes an interface "IExportMovie" that has a property displaytext and a method export that accepts a list of xelements (each xelement represents a movie) and the task of exporting is enthrusted on this export method of IExportMovie.
  
  Each xelement would be of the form :
+ ```xml
  <movie>
   <movie-name>qwe</movie-name>
 ..
 ..
 </movie>
+```
 
 The application currently has 2 export handlers: for plain text and for pdf.
 
