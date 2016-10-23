@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<movie-details>
+  <movie-detail type="string" display-text="Enter name of movie" mandatory="1" allow-multiple="0" persisted-text="Movie name">Name</movie-detail>
+  <movie-detail type="time">Run Time</movie-detail>
+  <movie-detail>Language</movie-detail>
+  <movie-detail  mandatory="1" allow-multiple="1">Lead Actor</movie-detail>
+  <movie-detail>Genre</movie-detail>
+</movie-details>

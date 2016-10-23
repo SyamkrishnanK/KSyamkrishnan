@@ -1,0 +1,16 @@
+C:\Multinus\Movie\Movie\bin\Debug\Movie.exe.config
+C:\Multinus\Movie\Movie\bin\Debug\Movie.exe
+C:\Multinus\Movie\Movie\bin\Debug\Movie.pdb
+C:\Multinus\Movie\Movie\obj\Debug\Movie.csprojResolveAssemblyReference.cache
+C:\Multinus\Movie\Movie\obj\Debug\Movie.exe
+C:\Multinus\Movie\Movie\obj\Debug\Movie.pdb
+C:\Multinus\Movie\Movie\bin\Debug\MigraDoc.DocumentObjectModel.dll
+C:\Multinus\Movie\Movie\bin\Debug\MigraDoc.Rendering.dll
+C:\Multinus\Movie\Movie\bin\Debug\MigraDoc.RtfRendering.dll
+C:\Multinus\Movie\Movie\bin\Debug\PdfSharp.Charting.dll
+C:\Multinus\Movie\Movie\bin\Debug\PdfSharp.dll
+C:\Multinus\Movie\Movie\bin\Debug\de\MigraDoc.DocumentObjectModel.resources.dll
+C:\Multinus\Movie\Movie\bin\Debug\de\MigraDoc.Rendering.resources.dll
+C:\Multinus\Movie\Movie\bin\Debug\de\MigraDoc.RtfRendering.resources.dll
+C:\Multinus\Movie\Movie\bin\Debug\de\PdfSharp.resources.dll
+C:\Multinus\Movie\Movie\bin\Debug\de\PdfSharp.Charting.resources.dll
