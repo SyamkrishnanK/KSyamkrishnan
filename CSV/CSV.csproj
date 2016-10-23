@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{31D06C51-B4E0-4C63-BBEC-065BB73420D9}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{F037908F-5D3C-4CC1-BE80-C924B9BCF1B3}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Movie</RootNamespace>
-    <AssemblyName>Movie</AssemblyName>
+    <RootNamespace>CSV</RootNamespace>
+    <AssemblyName>CSV</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,25 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MigraDoc.DocumentObjectModel">
-      <HintPath>GDI+\MigraDoc.DocumentObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="MigraDoc.Rendering">
-      <HintPath>GDI+\MigraDoc.Rendering.dll</HintPath>
-    </Reference>
-    <Reference Include="MigraDoc.RtfRendering">
-      <HintPath>GDI+\MigraDoc.RtfRendering.dll</HintPath>
-    </Reference>
-    <Reference Include="PdfSharp">
-      <HintPath>GDI+\PdfSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="PdfSharp.Charting">
-      <HintPath>GDI+\PdfSharp.Charting.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,31 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExportMovieBase.cs" />
-    <Compile Include="Helper.cs" />
-    <Compile Include="IExportMovie.cs" />
-    <Compile Include="ISingleDetail.cs" />
-    <Compile Include="MovieDetailsSpec.cs" />
-    <Compile Include="PdfExporter.cs" />
-    <Compile Include="PlainTextExporter.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegisterExportMovieAttribute.cs" />
-    <Compile Include="RegisterSingleDetailAttribute.cs" />
-    <Compile Include="SingleDetail.cs" />
-    <Compile Include="StringBuilderExtension.cs" />
-    <Compile Include="StringDetail.cs" />
-    <Compile Include="TimeDetail.cs" />
-    <Compile Include="XmlNodeExtension.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DetailHandlers.xml" />
-    <Content Include="ExportHandlers.xml" />
-    <Content Include="MovieDetails.xml" />
-    <Content Include="SingleDetailHandlers.xml" />
+    <ProjectReference Include="..\Movie\Movie.csproj">
+      <Project>{31d06c51-b4e0-4c63-bbec-065bb73420d9}</Project>
+      <Name>Movie</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

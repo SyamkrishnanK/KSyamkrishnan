@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<handlers>
+  <handler name="string" assembly-name="Movie" >Movie.StringDetail</handler>
+  <handler name="time"  assembly-name="Movie" >Movie.TimeDetail</handler>
+</handlers>

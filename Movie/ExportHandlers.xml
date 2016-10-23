@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<handlers>
+  <handler name="plain-text" assembly-name="Movie" >Movie.PlainTextExporter</handler>
+  <handler name="pdf"  assembly-name="Movie" >Movie.PdfExporter</handler>
+  <handler name="csv"  assembly-name="CSV" >CSV.CSVExporter</handler>
+</handlers>

@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace Movie
 {
     public static class Helper
     {
-        public static void RegisterDetailHandler<T>( this Dictionary<string,T> dict, string type, T fnDetailConstrucor, bool bOverWrite)
+        private static void RegisterDetailHandler<T>(this Dictionary<string, T> dict, string type, T fnDetailConstrucor, bool bOverWrite)
         {
             if (dict.ContainsKey(type))
             {
@@ -21,20 +23,52 @@ namespace Movie
                 dict.Add(type, fnDetailConstrucor);
         }
 
-        public static void RegisterImplementations(Type type, Func<MethodInfo, Attribute> fnCustomAttributeSelector)
+        public static void RegisterAllHandlers<T>(this Dictionary<string,Func< T>> dict, string path)
+        {
+            XmlDocument xDoc = new XmlDocument();
+            xDoc.Load(path);
+
+
+
+            IEnumerable<XmlNode> handlerNodes = xDoc.DocumentElement.SelectNodes("handler").Cast<XmlNode>();
+            foreach (XmlNode x in handlerNodes)
+            {
+                string name = x.Attributes["name"].Value;
+                string assembly = x.Attributes["assembly-name"].Value;
+                string handlerType = x.InnerText;
+                var instantiator = GetInstantiatorFn<T>(assembly, handlerType);
+                if (instantiator == null)
+                    continue;
+                dict.RegisterDetailHandler(name, instantiator, true);
+
+
+
+            }
+        }
+        private static Func<T> GetInstantiatorFn<T>(string assembly,string handlerType)
         {
 
-            IEnumerable<MethodInfo> types = AppDomain.CurrentDomain.GetAssemblies()
-                .SelectMany(s => s.GetTypes())
-                .Where(p => type.IsAssignableFrom(p) && !p.IsInterface)
-                .SelectMany(t => t.GetMethods())
-                .Where(t => t.IsStatic && fnCustomAttributeSelector != null
-                && t.GetParameters().Count() == 0);
-
-            types.ForEach(t => t.Invoke(null, null));
-
-
+            Type hType = Type.GetType(handlerType + "," + assembly);
+            if (!typeof(T).IsAssignableFrom(hType))
+                return null;
+            return ()=> (T)Activator.CreateInstance(hType);
         }
+        //public static IEnumerable<Func<Object[], T>> GetTypeImplementations<T>( string path)
+        //{
+        
+        //    return null;
+
+        //    //IEnumerable<MethodInfo> types = AppDomain.CurrentDomain.GetAssemblies()
+        //    //    .SelectMany(s => s.GetTypes())
+        //    //    .Where(p => type.IsAssignableFrom(p) && !p.IsInterface)
+        //    //    .SelectMany(t => t.GetMethods())
+        //    //    .Where(t => t.IsStatic && fnCustomAttributeSelector != null
+        //    //    && t.GetParameters().Count() == 0);
+
+        //    //types.ForEach(t => t.Invoke(null, null));
+
+
+        //}
 
         public static string parse(XElement movie, int index)
         {

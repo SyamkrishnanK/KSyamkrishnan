@@ -11,6 +11,7 @@ namespace Movie
     public interface ISingleDetail
     {
        XElement AddMovieDetail();
+       void Parse(XmlNode xNode);
        
     }
 }

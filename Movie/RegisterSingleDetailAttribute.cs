@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Movie
 {
-    public class RegisterSingleDetailAttribute:Attribute
+    public sealed class RegisterSingleDetailAttribute:Attribute
     {
         public RegisterSingleDetailAttribute()
         { }

@@ -1,0 +1,9 @@
+C:\Multinus\Movie\CSV\bin\Debug\CSV.dll
+C:\Multinus\Movie\CSV\bin\Debug\CSV.pdb
+C:\Multinus\Movie\CSV\bin\Debug\Movie.exe
+C:\Multinus\Movie\CSV\bin\Debug\PdfSharp.dll
+C:\Multinus\Movie\CSV\bin\Debug\Movie.pdb
+C:\Multinus\Movie\CSV\bin\Debug\de\PdfSharp.resources.dll
+C:\Multinus\Movie\CSV\obj\Debug\CSV.csprojResolveAssemblyReference.cache
+C:\Multinus\Movie\CSV\obj\Debug\CSV.dll
+C:\Multinus\Movie\CSV\obj\Debug\CSV.pdb

@@ -1,7 +1,6 @@
 C:\Multinus\Movie\Movie\bin\Debug\Movie.exe.config
 C:\Multinus\Movie\Movie\bin\Debug\Movie.exe
 C:\Multinus\Movie\Movie\bin\Debug\Movie.pdb
-C:\Multinus\Movie\Movie\obj\Debug\Movie.csprojResolveAssemblyReference.cache
 C:\Multinus\Movie\Movie\obj\Debug\Movie.exe
 C:\Multinus\Movie\Movie\obj\Debug\Movie.pdb
 C:\Multinus\Movie\Movie\bin\Debug\MigraDoc.DocumentObjectModel.dll

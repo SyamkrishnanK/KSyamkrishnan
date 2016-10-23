@@ -9,21 +9,21 @@ namespace Movie
 {
     public class StringDetail : SingleDetail
     {
-        [RegisterSingleDetailAttribute]
-        public static void RegisterStringDetail()
-        {
-            SingleDetail.RegisterDetailHandler("string", CreateStringDetail);
-        }
+        //[RegisterSingleDetailAttribute]
+        //public static void RegisterStringDetail()
+        //{
+        //    SingleDetail.RegisterDetailHandler("string", CreateStringDetail);
+        //}
 
-        private StringDetail() { }
+        public StringDetail() { }
 
-        public static StringDetail CreateStringDetail(XmlNode xNode)
-        {
-            StringDetail objStringDetail = new StringDetail();
-            objStringDetail.Parse(xNode);
-            return objStringDetail;
+        //public static StringDetail CreateStringDetail(XmlNode xNode)
+        //{
+        //    StringDetail objStringDetail = new StringDetail();
+        //    objStringDetail.Parse(xNode);
+        //    return objStringDetail;
 
-        }
+        //}
 
 
         protected override object GetValue()

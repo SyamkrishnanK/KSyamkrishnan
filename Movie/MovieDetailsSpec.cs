@@ -26,7 +26,8 @@ namespace Movie
 
         public static MovieDetailsSpec LoadMovieDetailsSpecFromXml(string SpecPath)
         {
-            Helper.RegisterImplementations(typeof(ISingleDetail), t => t.GetCustomAttribute<RegisterSingleDetailAttribute>());
+            //Helper.RegisterImplementations(typeof(ISingleDetail), t => t.GetCustomAttribute<RegisterSingleDetailAttribute>());
+            SingleDetail.RegisterAllDetailHandlers();
             Console.WriteLine(string.Format("Reading Detais Configuration from '{0}'", SpecPath));
             XmlDocument XDoc = new XmlDocument();
 

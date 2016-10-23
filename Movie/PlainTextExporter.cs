@@ -10,13 +10,13 @@ namespace Movie
 {
     public class PlainTextExporter :ExportMovieBase
     {
-        private PlainTextExporter()
+        public PlainTextExporter()
         { }
-        [RegisterExportMovie]
-        public static void RegisterPlainTextExporter()
-        {
-            RegisterExportMovieHandler("plain-text", () => new PlainTextExporter());
-        }
+        //[RegisterExportMovie]
+        //public static void RegisterPlainTextExporter()
+        //{
+        //    RegisterExportMovieHandler("plain-text", () => new PlainTextExporter());
+        //}
 
         #region ExportMovieBase
         public override string DisplayText

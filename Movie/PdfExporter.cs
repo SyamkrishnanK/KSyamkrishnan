@@ -11,13 +11,13 @@ namespace Movie
 {
     public class PdfExporter : ExportMovieBase
     {
-        private PdfExporter()
+        public PdfExporter()
         { }
-        [RegisterExportMovie]
-        public static void RegisterPlainTextExporter()
-        {
-            RegisterExportMovieHandler("pdf", () => new PdfExporter());
-        }
+        //[RegisterExportMovie]
+        //public static void RegisterPlainTextExporter()
+        //{
+        //    RegisterExportMovieHandler("pdf", () => new PdfExporter());
+        //}
 
 
         public override string DisplayText

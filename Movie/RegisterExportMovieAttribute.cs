@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Movie
 {
-   public class RegisterExportMovieAttribute:Attribute
+   public sealed class RegisterExportMovieAttribute:Attribute
     {
        public RegisterExportMovieAttribute()
        { }

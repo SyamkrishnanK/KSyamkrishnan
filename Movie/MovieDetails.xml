@@ -5,4 +5,5 @@
   <movie-detail>Language</movie-detail>
   <movie-detail  mandatory="1" allow-multiple="1">Lead Actor</movie-detail>
   <movie-detail>Genre</movie-detail>
+  <movie-detail allow-multiple="1">supporting actors</movie-detail>
 </movie-details>
